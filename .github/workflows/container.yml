@@ -11,10 +11,10 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    container: node:18
+    #container: node:18
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
-      MONGODB_CLUSTER_ADDRESS: cluster0.ntrwp.mongodb.net
+      MONGODB_CLUSTER_ADDRESS: cluster0.sld3qkk.mongodb.net
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
       PORT: 8080
