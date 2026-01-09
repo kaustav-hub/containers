@@ -35,6 +35,8 @@ jobs:
       - name: Output information
         run: |
           echo "MONGODB_USERNAME: $MONGODB_USERNAME"
+    outputs:
+      MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}
   deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -44,5 +46,5 @@ jobs:
           PORT: 3000
         run: |        
           echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
-          echo "MONGODB_USERNAME: ${{needs.test.env.MONGODB_USERNAME}}"
+          echo "MONGODB_USERNAME: ${{needs.test.outputs.MONGODB_USERNAME}}"
           echo "${{ env.PORT }}"
